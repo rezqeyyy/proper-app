@@ -5,6 +5,16 @@ import { useRouter } from "next/navigation"; // TAMBAHKAN INI
 import { ShoppingCart, Trash2, CreditCard, Loader2, LogOut } from "lucide-react"; // TAMBAHKAN LogOut
 import { supabase } from "../lib/supabase";
 
+// Trik agar Tailwind tidak menghapus warna dinamis dari database (Safelist)
+const tailwindSafelist = [
+  "bg-amber-700",
+  "bg-amber-900",
+  "bg-orange-400",
+  "bg-yellow-400",
+  "bg-green-600",
+  "bg-red-500",
+];
+
 // ... (Tipe Data Product & CartItem biarkan sama seperti sebelumnya) ...
 type Product = {
   id: number;
